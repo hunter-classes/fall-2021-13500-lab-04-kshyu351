@@ -46,7 +46,7 @@ std::string trapezoid(int width, int height) {
     //         }
     //         spaces++;
     //     }
-    //     spaces = 0;//jeff
+    //     spaces = 0;
     //     line2 += "\n"; 
     //     shape += line2;
     //     line2 = "";
@@ -54,24 +54,27 @@ std::string trapezoid(int width, int height) {
     
     // return shape; 
 
-    std::string shape;
-    std::string line; 
-  
-    if (width/2 + width%2 > height) {
-        return "Impossible shape!";
-    }
-    
-    for(int i=width;i>width-height; i--) {
-            for(int j=0;j<width-i;j++) {
-                 line += " ";
-            }
-            for(int j=0;j<(i*2)-1;j++) {
-                line += "*";
-            }
-            line += "\n";
-        }
-        shape += line;
+    std::string shape = "";
+    std::string line = ""; 
+    int spaces = 0;
+    int stars = width;
 
-        return shape;
+    if(width/2 + width%2 < height){
+        return "Impossible Shape!";
+    }
+    for(int i = 0; i < height; i++){
+        for(int j = 0; j < spaces; j++){
+            line += " ";
+        }
+        for(int j = 0; j < stars; j++){
+            line += "*";
+        }
+        spaces++;
+        stars-=2;
+        shape += line + "\n";
+        line = "";
+    }
+
+    return shape;
 
 }

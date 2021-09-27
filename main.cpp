@@ -15,6 +15,7 @@ Assignment: Lab 4
 #include "lower.h"
 #include "upper.h"
 #include "trapezoid.h"
+#include "checkerboard3x3.h"
 
 
 int main() { 
@@ -74,4 +75,15 @@ int main() {
     std::cout << result9; 
     std::cout << "\n------------------\n";
 
+    std::string result10;
+    result10 = checkerboard3x3(16,11);
+    std::cout << "checkerboard3x3(16,11):\n";
+    std::cout << result10;
+    std::cout << "\n------------------\n";
+
+    std::string result11;
+    result11 = checkerboard3x3(27,27);
+    std::cout << "checkerboard3x3(27,27):\n";
+    std::cout << result11;
+    std::cout << "\n------------------\n";
 }
